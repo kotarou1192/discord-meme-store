@@ -6,10 +6,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const API_PREFIX string = "/api"
+
 func Run() error {
 	eg := gin.Default()
 
-	eg.GET("/home", home.Show)
+	eg.GET(API_PREFIX+"/home", home.Show)
 
 	err := eg.Run()
 	return err
